@@ -2,10 +2,12 @@ module.exports = {
     env: {
         browser: true,
         es2020: true,
+        jest: true,
     },
     extends: [
         'airbnb',
         'plugin:react/recommended',
+        'plugin:jest/recommended',
         'plugin:prettier/recommended',
     ],
     globals: {
@@ -18,7 +20,7 @@ module.exports = {
         ecmaVersion: 11,
         sourceType: 'module',
     },
-    plugins: ['react'],
+    plugins: ['react', 'jest'],
     rules: {
         'no-console': ['error', { allow: ['warn', 'error'] }],
         'import/prefer-default-export': 'off',

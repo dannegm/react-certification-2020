@@ -1,3 +1,5 @@
 require('dotenv/config');
 
-module.exports = {};
+module.exports = {
+    SUPPRESS_NO_CONFIG_WARNING: true,
+};
