@@ -4,14 +4,14 @@ import useDocumentTitle from '@/shared/hooks/useDocumentTitle';
 
 import { Shell } from '@ui/layout';
 
-const Home = () => {
-    useDocumentTitle('Home');
+const Favs = () => {
+    useDocumentTitle('Favs');
 
     return (
         <Shell>
-            <h1>Home</h1>
+            <h1>Favs</h1>
         </Shell>
     );
 };
 
-export default Home;
+export default Favs;

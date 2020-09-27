@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 
 import useDocumentTitle from '@/shared/hooks/useDocumentTitle';
@@ -8,7 +8,7 @@ import { useAuth } from '@/shared/providers/AuthProvider';
 import { AUTH_ERROR_USER, AUTH_ERROR_PASS } from '@/shared/utils/constants';
 
 import { Button, TextField, PasswordField } from '@ui/components';
-import { Shell } from '@ui/layout';
+import { Page } from '@ui/layout';
 import { LockOutlineIcon, PersonOutlineIcon } from '@ui/icons';
 
 import { Form, Title, Alert, Wrapper } from './Login.styled';
@@ -36,7 +36,7 @@ const Login = () => {
 
     if (!authenticated) {
         return (
-            <Shell>
+            <Page>
                 <Wrapper>
                     <Form onSubmit={handleSubmit}>
                         <Title>Sign in</Title>
@@ -63,7 +63,7 @@ const Login = () => {
                         </Button>
                     </Form>
                 </Wrapper>
-            </Shell>
+            </Page>
         );
     }
 

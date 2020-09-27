@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Page, Container } from './Shell.styled';
+import Navbar from '../Navbar';
+import Page from '../Page';
+import Searchbar from '../Searchbar';
+
+import { Wrapper, Layout } from './Shell.styled';
 
 const Shell = ({ children }) => {
     return (
-        <Page>
-            <Container>{children}</Container>
-        </Page>
+        <Wrapper>
+            <Page>
+                <Layout>
+                    <Navbar />
+                    <Searchbar />
+                    {children}
+                </Layout>
+            </Page>
+        </Wrapper>
     );
 };
 

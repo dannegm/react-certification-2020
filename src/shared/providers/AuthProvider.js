@@ -18,6 +18,7 @@ const useAuth = () => {
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true);
     const [authenticated, setAuthenticated] = useState(false);
     const [user, setUser] = useState({});
     const [errors, setErrors] = useState(null);
@@ -27,6 +28,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const isAuthenticated = Boolean(lastAuthState);
         setAuthenticated(isAuthenticated);
+        setLoading(false);
 
         if (isAuthenticated) {
             setUser(lastAuthState.user);
@@ -41,9 +43,11 @@ const AuthProvider = ({ children }) => {
             setAuthenticated(true);
             setAuthState({ user: responsedUser });
             setUser(responsedUser);
+            setLoading(false);
         } catch (err) {
             setAuthenticated(false);
             setErrors(err.toString());
+            setLoading(false);
         }
     }, []);
 
@@ -52,11 +56,12 @@ const AuthProvider = ({ children }) => {
         setAuthState(null);
         setUser({});
         setErrors(null);
+        setLoading(false);
     }, []);
 
     return (
         <AuthContext.Provider
-            value={{ login, logout, authenticated, user, errors }}
+            value={{ login, logout, authenticated, user, loading, errors }}
         >
             {children}
         </AuthContext.Provider>

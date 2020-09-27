@@ -1,16 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useAuth } from '@/shared/providers/AuthProvider';
 
-import { Wrapper } from './Navbar.styled';
+import Avatar from '@ui/components/Avatar';
+import Link from './components/Link';
 
-const Navbar = ({ ...props }) => {
-    return <Wrapper>{/* TODO: Content Here */}</Wrapper>;
+import { HomeOutlineIcon, LogOutOutlineIcon, StarOutlineIcon } from '@ui/icons';
+
+import { Wrapper, Spacer } from './Navbar.styled';
+
+const Navbar = () => {
+    const { user } = useAuth();
+
+    return (
+        <Wrapper>
+            <Link icon={<HomeOutlineIcon />} label='Home' route='/' />
+            <Spacer />
+            <Link icon={<StarOutlineIcon />} route='/favs' />
+            <Avatar src={user.avatarUrl} />
+            <Link icon={<LogOutOutlineIcon />} route='/logout' />
+        </Wrapper>
+    );
 };
 
-Navbar.propTypes = {
-    // TODO: propTypes
-};
-
-Navbar.defaultProps = {
-    // TODO: defaultProps
-};
+export default Navbar;

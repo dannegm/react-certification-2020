@@ -5,7 +5,11 @@ import { useAuth } from '@/shared/providers/AuthProvider';
 
 // eslint-disable-next-line react/prop-types
 const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { authenticated } = useAuth();
+    const { authenticated, loading } = useAuth();
+
+    if (loading) {
+        return <></>;
+    }
 
     return (
         <Route

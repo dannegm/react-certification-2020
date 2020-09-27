@@ -34,6 +34,8 @@ ${componentName}.propTypes = {
 ${componentName}.defaultProps = {
     // TODO: defaultProps
 }
+
+export default ${componentName};
 `;
 
 const tplStyles = (componentName) => `

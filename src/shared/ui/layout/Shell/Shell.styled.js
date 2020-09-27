@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-export const Page = styled.div`
+export const Wrapper = styled.div`
     display: block;
+    background-color: #e51e25;
+    min-height: 100vh;
+    overflow: hidden;
 `;
 
-export const Container = styled.div`
+export const Layout = styled.div`
     display: block;
-    margin: 1rem auto;
-    width: 460px;
-
-    /* Small devices (landscape phones, 576px and up) */
-    @media (max-width: 458px) {
-        width: auto;
-        margin: 1rem;
-    }
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+    min-height: 80vh;
 `;
