@@ -47,6 +47,7 @@ module.exports = {
         extensions: ['.js'],
         alias: {
             '@': path.join(__dirname, './../src/'),
+            '@ui': path.join(__dirname, './../src/shared/ui/'),
         },
         modules: ['node_modules'],
     },

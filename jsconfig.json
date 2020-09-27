@@ -2,7 +2,8 @@
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["src/*"],
+            "@ui/*": ["src/shared/ui/*"]
         }
     },
     "exclude": ["node_modules", "public", "build"]

@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body {
-        font-family: 'Raleway', Helvetica, Arial, sans-serif;
+        font-family: 'Noto Sans JP', Helvetica, Arial, sans-serif;
         color: #050038;
     }
     a {

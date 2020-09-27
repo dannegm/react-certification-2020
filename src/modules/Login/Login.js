@@ -5,7 +5,11 @@ import useDocumentTitle from '@/shared/hooks/useDocumentTitle';
 
 import { useAuth } from '@/shared/providers/AuthProvider';
 
-import { Page } from './Login.styled';
+import { Button, TextField, PasswordField } from '@/shared/ui/components';
+import { Shell } from '@ui/layout';
+import { LockOutlineIcon, PersonOutlineIcon } from '@ui/icons';
+
+import { Form, Title, Alert, Wrapper } from './Login.styled';
 
 const Login = () => {
     useDocumentTitle('Login');
@@ -21,31 +25,34 @@ const Login = () => {
 
     if (!authenticated) {
         return (
-            <Page>
-                <h1>Login</h1>
-
-                {errors}
-
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Username
-                        <input
+            <Shell>
+                <Wrapper>
+                    <Form onSubmit={handleSubmit}>
+                        <Title>Sign in</Title>
+                        <TextField
+                            leftIcon={<PersonOutlineIcon />}
+                            placeholder='Username'
                             value={username}
                             onChange={(ev) => setUsername(ev.target.value)}
                         />
-                    </label>
-                    <label>
-                        Password
-                        <input
+
+                        <br />
+                        <PasswordField
+                            leftIcon={<LockOutlineIcon />}
+                            placeholder='Password'
                             value={password}
                             onChange={(ev) => setPassword(ev.target.value)}
-                            type='password'
                         />
-                    </label>
 
-                    <button type='submit'>Login</button>
-                </form>
-            </Page>
+                        {errors && <Alert>{errors}</Alert>}
+
+                        <br />
+                        <Button color='error' fullwidth>
+                            Sign In
+                        </Button>
+                    </Form>
+                </Wrapper>
+            </Shell>
         );
     }
 

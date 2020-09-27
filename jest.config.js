@@ -12,6 +12,10 @@ module.exports = {
             statements: 70,
         },
     },
+    moduleNameMapper: {
+        '@b/([^\\.]*)$': '<rootDir>/src/$1',
+        '@ui/([^\\.]*)$': '<rootDir>src/shared/ui/$1',
+    },
     setupFiles: ['./test/setup.js'],
     snapshotSerializers: ['enzyme-to-json/serializer'],
 };

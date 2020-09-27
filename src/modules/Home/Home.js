@@ -4,21 +4,31 @@ import useDocumentTitle from '@/shared/hooks/useDocumentTitle';
 
 import { useAuth } from '@/shared/providers/AuthProvider';
 
-import { Page } from './Home.styled';
+import { Button } from '@/shared/ui/components';
+import { Shell } from '@ui/layout';
+import { LogOutOutlineIcon } from '@ui/icons';
+
+import { useHistory } from 'react-router';
 
 const Home = () => {
     useDocumentTitle('Home');
+
+    const history = useHistory();
     const { user } = useAuth();
 
     return (
-        <Page>
+        <Shell>
             <h1>Home</h1>
-            <h2>Bienvenido: {user.displayName}</h2>
+            <h2>{user.displayName}</h2>
             <br />
-            <a href='/logout'>Logout</a>
+            <Button onClick={() => history.push('/logout')}>
+                <LogOutOutlineIcon />
+                <span>Logout</span>
+            </Button>
+            <br />
             <br />
             <img src={user.avatarUrl} alt='' />
-        </Page>
+        </Shell>
     );
 };
 
