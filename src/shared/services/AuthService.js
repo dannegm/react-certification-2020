@@ -1,5 +1,7 @@
 import { compare } from 'bcryptjs';
 
+import { AUTH_ERROR_USER, AUTH_ERROR_PASS } from '@/shared/utils/constants';
+
 const mokedUsers = [
     {
         uid: '8k9jMxJCfKTH',
@@ -27,7 +29,7 @@ const requestLogin = async ({ username, password }) => {
     });
 
     if (!user) {
-        throw new Error(`User not found`);
+        throw new Error(AUTH_ERROR_USER);
     }
 
     const matchCredentials = await compare(password, user.password);
@@ -36,7 +38,7 @@ const requestLogin = async ({ username, password }) => {
         return user;
     }
 
-    throw new Error(`Invalid password`);
+    throw new Error(AUTH_ERROR_PASS);
 };
 
 export { requestLogin };

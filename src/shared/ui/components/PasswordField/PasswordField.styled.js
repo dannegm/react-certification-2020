@@ -7,4 +7,5 @@ export const PasswordButton = styled.button.attrs({ type: 'button' })`
     padding: 0;
     line-height: 1;
     cursor: pointer;
+    outline: 0;
 `;

@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Redirect } from 'react-router';
 
 import useDocumentTitle from '@/shared/hooks/useDocumentTitle';
 
 import { useAuth } from '@/shared/providers/AuthProvider';
 
-import { Button, TextField, PasswordField } from '@/shared/ui/components';
+import { AUTH_ERROR_USER, AUTH_ERROR_PASS } from '@/shared/utils/constants';
+
+import { Button, TextField, PasswordField } from '@ui/components';
 import { Shell } from '@ui/layout';
 import { LockOutlineIcon, PersonOutlineIcon } from '@ui/icons';
 
 import { Form, Title, Alert, Wrapper } from './Login.styled';
+
+const errorMessages = {
+    [`Error: ${AUTH_ERROR_USER}`]: 'User not found',
+    [`Error: ${AUTH_ERROR_PASS}`]: 'Invalid password',
+};
 
 const Login = () => {
     useDocumentTitle('Login');
@@ -17,6 +24,10 @@ const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(() => {
+        setPassword('');
+    }, [errors]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -44,7 +55,7 @@ const Login = () => {
                             onChange={(ev) => setPassword(ev.target.value)}
                         />
 
-                        {errors && <Alert>{errors}</Alert>}
+                        {errors && <Alert>{errorMessages[errors]}</Alert>}
 
                         <br />
                         <Button color='error' fullwidth>

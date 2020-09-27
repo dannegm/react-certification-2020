@@ -1,4 +1,5 @@
-const { writeFile, writeFileSync } = require('fs');
+#!/usr/bin/env node
+const { writeFileSync } = require('fs');
 const path = require('path');
 const SVGO = require('svgo');
 const svgtojsx = require('svg-to-jsx');
