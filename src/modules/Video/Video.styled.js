@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const PlayerWrapper = styled.div`
     display: block;
@@ -21,4 +21,14 @@ export const PlayerWrapper = styled.div`
             height: 100%;
         }
     }
+`;
+
+export const RelatedWrapper = styled.div`
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+`;
+
+export const RelatedTitle = styled.h1`
+    font-size: 0.8rem;
+    text-transform: uppercase;
 `;

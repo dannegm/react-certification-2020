@@ -16,7 +16,7 @@ import {
     VideoThumbnail,
 } from '@ui/components';
 
-import { PlayerWrapper } from './Video.styled';
+import { PlayerWrapper, RelatedWrapper, RelatedTitle } from './Video.styled';
 
 const VideoMapper = (props) => (
     <VideoThumbnail
@@ -35,8 +35,8 @@ const RelatedVideos = ({ videoId }) => {
     });
 
     return (
-        <div>
-            <h3>Related videos</h3>
+        <RelatedWrapper>
+            <RelatedTitle>Related videos</RelatedTitle>
 
             {!loading &&
                 !!data &&
@@ -47,7 +47,7 @@ const RelatedVideos = ({ videoId }) => {
                 ) : (
                     <List items={data.items} component={VideoMapper} />
                 ))}
-        </div>
+        </RelatedWrapper>
     );
 };
 
@@ -88,6 +88,7 @@ const Video = () => {
             {canRender && (
                 <>
                     <VideoInfo
+                        videoSchema={video}
                         title={video.snippet.title}
                         description={video.snippet.description}
                         views={video.statistics.viewCount}

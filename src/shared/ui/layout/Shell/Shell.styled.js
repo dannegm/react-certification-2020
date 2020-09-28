@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     display: block;
-    background-color: #e51e25;
+
+    /* background-color: #e51e25; */
     min-height: 100vh;
     overflow: hidden;
 `;

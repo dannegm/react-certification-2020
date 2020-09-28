@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+
+import { useFavs } from '@/shared/providers/FavsProvider';
 
 import RichText from '../RichText';
 
@@ -7,7 +9,7 @@ import {
     ChevronUpOutlineIcon,
     HeartIcon,
     MessageSquareIcon,
-    // StarIcon,
+    StarIcon,
     StarOutlineIcon,
 } from '@ui/icons';
 
@@ -28,17 +30,44 @@ import {
     InfoActionLabel,
 } from './VideoInfo.styled';
 
-const InfoAction = ({ icon, label }) => {
+const InfoAction = ({ icon, label, ...props }) => {
     return (
-        <InfoActionWrapper>
+        <InfoActionWrapper {...props}>
             <InfoActionIcon>{icon}</InfoActionIcon>
             {!!label && <InfoActionLabel>{label}</InfoActionLabel>}
         </InfoActionWrapper>
     );
 };
 
-const VideoInfo = ({ title, description, views, likes, comments }) => {
+const VideoInfo = ({
+    title,
+    description,
+    views,
+    likes,
+    comments,
+    videoSchema,
+}) => {
+    const { save, remove, inList } = useFavs();
+
+    const [saved, setSaved] = useState(inList(videoSchema.id));
+
     const [expanded, setExpanded] = useState(false);
+
+    useEffect(() => {
+        setSaved(inList(videoSchema.id));
+    }, [videoSchema]);
+
+    const handleSave = () => {
+        if (saved) {
+            remove(videoSchema.id);
+            setSaved(false);
+        } else {
+            save(videoSchema);
+            setSaved(true);
+        }
+    };
+
+    const savedIcon = saved ? <StarIcon /> : <StarOutlineIcon />;
 
     return (
         <InfoWrapper>
@@ -72,7 +101,7 @@ const VideoInfo = ({ title, description, views, likes, comments }) => {
 
                 <Separator />
 
-                <InfoAction icon={<StarOutlineIcon />} />
+                <InfoAction onClick={handleSave} icon={savedIcon} />
             </InfoActions>
         </InfoWrapper>
     );
@@ -84,6 +113,7 @@ VideoInfo.propTypes = {
     views: PropTypes.string.isRequired,
     likes: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,
+    videoSchema: PropTypes.object.isRequired,
 };
 
 VideoInfo.defaultProps = {

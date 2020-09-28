@@ -28,7 +28,7 @@ const Search = () => {
         decodeURI(window.location.href.split('search?')[1])
     );
 
-    const { loading, data } = useYoutubeSearch({ q: query });
+    const { loading, data } = useYoutubeSearch({ q: query, maxResults: 25 });
 
     return (
         <Shell>

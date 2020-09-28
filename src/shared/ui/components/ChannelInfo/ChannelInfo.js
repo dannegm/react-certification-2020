@@ -44,7 +44,8 @@ const ChannelInfo = ({ channelId }) => {
                         <Subscribers>
                             {abbreviatedThousands(
                                 channel.statistics.subscriberCount
-                            )}
+                            )}{' '}
+                            subscribers
                         </Subscribers>
                     </Info>
                     <Button color='error' onClick={handleClick}>
