@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
+/* eslint-disable react/no-danger */
 const UnsafeHtml = ({ children }) => (
     <div dangerouslySetInnerHTML={{ __html: children }} />
 );

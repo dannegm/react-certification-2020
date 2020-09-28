@@ -21,7 +21,7 @@ const VideoCard = ({
 }) => {
     const timeAgo = moment(publishedAt).fromNow();
     return (
-        <Wrapper>
+        <Wrapper data-id={videoId}>
             <ThumbnailWrapper>
                 <Thumbnail src={thumbnail} loading='lazy' />
             </ThumbnailWrapper>

@@ -16,7 +16,7 @@ const List = ({ component: Component, items }) => {
 };
 
 List.propTypes = {
-    items: PropTypes.array.isRequired,
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
     component: PropTypes.func.isRequired,
 };
 

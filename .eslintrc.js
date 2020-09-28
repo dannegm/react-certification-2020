@@ -36,6 +36,7 @@ module.exports = {
         'react/destructuring-assignment': 'off',
         'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
         'jsx-a11y/label-has-associated-control': 'off',
+        'jsx-a11y/anchor-is-valid': 'off',
     },
     settings: {
         'import/resolver': {

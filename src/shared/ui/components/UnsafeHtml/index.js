@@ -1,4 +1,3 @@
+import UnsafeHtml from './UnsafeHtml';
 
-    import UnsafeHtml from './UnsafeHtml';
-
-    export default UnsafeHtml;
+export default UnsafeHtml;

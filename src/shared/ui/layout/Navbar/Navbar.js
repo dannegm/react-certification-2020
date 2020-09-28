@@ -2,9 +2,9 @@ import React from 'react';
 import { useAuth } from '@/shared/providers/AuthProvider';
 
 import Avatar from '@ui/components/Avatar';
-import Link from './components/Link';
-
 import { HomeOutlineIcon, LogOutOutlineIcon, StarOutlineIcon } from '@ui/icons';
+
+import Link from './components/Link';
 
 import { Wrapper, Spacer } from './Navbar.styled';
 

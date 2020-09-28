@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router';
 
 import { Logo } from '@ui/components';
 import { SearchOutlineIcon, CloseOutlineIcon } from '@ui/icons';
@@ -9,7 +10,6 @@ import {
     IconButton,
     FieldInput,
 } from './Searchbar.styled';
-import { useHistory } from 'react-router';
 
 const Searchbar = () => {
     const history = useHistory();

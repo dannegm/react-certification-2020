@@ -1,4 +1,3 @@
+import VideoThumbnail from './VideoThumbnail';
 
-    import VideoThumbnail from './VideoThumbnail';
-
-    export default VideoThumbnail;
+export default VideoThumbnail;

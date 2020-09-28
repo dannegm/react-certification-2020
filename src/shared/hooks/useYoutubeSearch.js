@@ -1,5 +1,4 @@
 import useFacade from './useFacade';
-import { YT_SEARCH_STORAGE_KEY } from '@/shared/utils/constants';
 
 const objectToUriParams = (obj) =>
     Object.entries(obj)

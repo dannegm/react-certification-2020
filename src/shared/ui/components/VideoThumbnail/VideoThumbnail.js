@@ -20,7 +20,7 @@ const VideoThumbnail = ({
 }) => {
     const timeAgo = moment(publishedAt).fromNow();
     return (
-        <Wrapper>
+        <Wrapper data-id={videoId}>
             <Thumbnail src={thumbnail} loading='lazy' />
             <Info>
                 <Title>{title}</Title>
