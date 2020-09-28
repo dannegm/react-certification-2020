@@ -59,7 +59,7 @@ const Video = () => {
 
     const [canRender, setCanRender] = useState(false);
     const [video, setVideo] = useState(data);
-    useDocumentTitle(!!video ? video.snippet.title : 'Loading...');
+    useDocumentTitle(video ? video.snippet.title : 'Loading...');
 
     useEffect(() => {
         if (!loading && !!data && !data.error) {
@@ -70,7 +70,7 @@ const Video = () => {
 
     const playerOptions = {
         playerVars: {
-            autoplay: 0,
+            autoplay: 1,
         },
     };
 

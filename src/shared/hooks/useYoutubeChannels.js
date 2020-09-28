@@ -1,8 +1,8 @@
-import useFacade from './useFacade';
-
 import { objectToUriParams } from '@/shared/utils/helpers';
 
-const getApiUrl = (query = '', options = {}) => {
+import useFacade from './useFacade';
+
+const getApiUrl = (options = {}) => {
     return (
         'https://www.googleapis.com/' +
         'youtube/v3/channels' +
@@ -13,8 +13,8 @@ const getApiUrl = (query = '', options = {}) => {
     );
 };
 
-const useYoutubeChannels = (options = {}, query = '') => {
-    const API_URL = getApiUrl(query, options);
+const useYoutubeChannels = (options = {}) => {
+    const API_URL = getApiUrl(options);
     return useFacade(API_URL);
 };
 

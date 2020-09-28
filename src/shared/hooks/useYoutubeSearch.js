@@ -1,6 +1,6 @@
-import useFacade from './useFacade';
-
 import { objectToUriParams } from '@/shared/utils/helpers';
+
+import useFacade from './useFacade';
 
 const getApiUrl = (options = {}) => {
     return (

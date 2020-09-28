@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { useFavs } from '@/shared/providers/FavsProvider';
 
-import RichText from '../RichText';
-
 import {
     ChevronUpOutlineIcon,
     HeartIcon,
@@ -14,6 +12,8 @@ import {
 } from '@ui/icons';
 
 import { abbreviatedThousands } from '@/shared/utils/filters';
+
+import RichText from '../RichText';
 
 import {
     Separator,
@@ -113,6 +113,7 @@ VideoInfo.propTypes = {
     views: PropTypes.string.isRequired,
     likes: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
     videoSchema: PropTypes.object.isRequired,
 };
 

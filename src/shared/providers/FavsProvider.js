@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useContext } from 'react';
 import { nanoid } from 'nanoid';
 
 import { FAVS_STORAGE_KEY } from '@/shared/utils/constants';
-
-import { useAuth } from './AuthProvider';
 
 import useLocalStorage from '@/shared/hooks/useLocalStorage';
 
@@ -19,8 +17,6 @@ const useFavs = () => {
 
 // eslint-disable-next-line react/prop-types
 const FavsProvider = ({ children }) => {
-    const { user } = useAuth();
-
     const [list, setList] = useLocalStorage(FAVS_STORAGE_KEY, []);
 
     const save = (video) => {
@@ -29,14 +25,11 @@ const FavsProvider = ({ children }) => {
             uid: nanoid(),
         };
         const newList = [saveItem, ...list];
-        console.log('saved');
         setList(newList);
     };
 
     const remove = (videoId) => {
         const newList = list.filter((i) => i.video.id !== videoId);
-
-        console.log('removed');
         setList(newList);
     };
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import UnsafeHtml from '../UnsafeHtml';
 
+/* eslint-disable no-useless-escape */
 const formatingText = (text) => {
     return text
         .replace(/\n/gi, '<br /><br />')
