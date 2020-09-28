@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-
-import useFetch from './useFetch';
+import useFacade from './useFacade';
+import { YT_SEARCH_STORAGE_KEY } from '@/shared/utils/constants';
 
 const objectToUriParams = (obj) =>
     Object.entries(obj)
@@ -23,7 +22,7 @@ const getApiUrl = (query = '', options = {}) => {
 
 const useYoutubeSearch = (options = {}, query = '') => {
     const API_URL = getApiUrl(query, options);
-    return useFetch(API_URL);
+    return useFacade(API_URL);
 };
 
 export default useYoutubeSearch;

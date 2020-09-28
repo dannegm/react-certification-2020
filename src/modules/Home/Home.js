@@ -25,8 +25,6 @@ const Home = () => {
         order: 'rating',
     });
 
-    console.log(data);
-
     return (
         <Shell>
             {!loading &&

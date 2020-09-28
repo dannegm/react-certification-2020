@@ -23,7 +23,7 @@ export const Thumbnail = styled.img`
 `;
 
 export const Title = styled.div`
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.5;
     margin-bottom: 0.4rem;
