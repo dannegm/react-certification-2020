@@ -2,7 +2,7 @@ export const abbreviatedThousands = (number, digits = 2) => {
     const num = Number(number);
     const symbols = [
         { value: 1, symbol: '' },
-        { value: 1e3, symbol: 'K' },
+        { value: 1e3, symbol: 'k' },
         { value: 1e6, symbol: 'M' },
         { value: 1e9, symbol: 'G' },
     ];

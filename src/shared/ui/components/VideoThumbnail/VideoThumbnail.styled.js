@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     margin: 1rem 0;
     gap: 1rem;
+    cursor: pointer;
 `;
 
 export const Info = styled.div``;

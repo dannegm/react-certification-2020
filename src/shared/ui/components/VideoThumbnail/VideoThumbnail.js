@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router';
 import moment from 'moment';
 
 import {
@@ -18,9 +19,15 @@ const VideoThumbnail = ({
     channelTitle,
     publishedAt,
 }) => {
+    const history = useHistory();
     const timeAgo = moment(publishedAt).fromNow();
+
+    const handleClick = () => {
+        history.push(`/video/${videoId}`);
+    };
+
     return (
-        <Wrapper data-id={videoId}>
+        <Wrapper onClick={handleClick}>
             <Thumbnail src={thumbnail} loading='lazy' />
             <Info>
                 <Title>{title}</Title>

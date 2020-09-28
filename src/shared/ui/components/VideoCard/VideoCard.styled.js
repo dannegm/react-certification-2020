@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
-    gap: 1rem;
+    margin: 2rem 0;
+    gap: 0.5rem;
+    cursor: pointer;
 `;
 
 export const ThumbnailWrapper = styled.div`
@@ -23,24 +24,21 @@ export const Thumbnail = styled.img`
 `;
 
 export const Title = styled.div`
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 0.4rem;
+    line-height: 1.1;
 `;
 export const Info = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 `;
 
 export const ChannelTitle = styled.div`
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #acacac;
-    margin-bottom: 0.4rem;
 `;
 
 export const TimeAgo = styled.div`
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #b3b3b3;
 `;
