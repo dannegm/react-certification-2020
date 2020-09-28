@@ -20,13 +20,16 @@ const Wrapper = styled.button`
     justify-content: space-between;
     align-items: center;
     background: none;
+    color: #9a9292;
     border: 0;
     border-radius: 2rem;
     outline: 0;
     padding: 0.6rem;
+    transition: all 0.2s;
     cursor: pointer;
 
     &:hover {
+        background: rgba(0 0 0 / 5%);
         color: #e53036;
     }
 

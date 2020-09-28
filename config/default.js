@@ -1,5 +1,5 @@
 require('dotenv/config');
 
 module.exports = {
-    SUPPRESS_NO_CONFIG_WARNING: true,
+    YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
 };

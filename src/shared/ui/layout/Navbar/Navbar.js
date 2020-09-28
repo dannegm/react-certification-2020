@@ -15,8 +15,8 @@ const Navbar = () => {
         <Wrapper>
             <Link icon={<HomeOutlineIcon />} label='Home' route='/' />
             <Spacer />
-            <Link icon={<StarOutlineIcon />} route='/favs' />
             <Avatar src={user.avatarUrl} />
+            <Link icon={<StarOutlineIcon />} route='/favs' />
             <Link icon={<LogOutOutlineIcon />} route='/logout' />
         </Wrapper>
     );
